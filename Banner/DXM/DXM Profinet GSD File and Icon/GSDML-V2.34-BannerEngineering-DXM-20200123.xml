@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-stylesheet href="GSDML-Stylesheet-HTML-V2.34.xsl" type="text/xsl"?>
+
+<!--
+     If you change something here, don't forget to update the CI validation
+     script after changing the filename.
+-->
+
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.34.xsd">
+    <!-- ProfileHeader definition as defined in ISO 15745-1. Please do not change the content. -->
+    <ProfileHeader>
+        <ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+        <ProfileRevision>1.00</ProfileRevision>
+        <ProfileName>Device Profile for PROFINET Devices</ProfileName>
+        <ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+        <ProfileClassID>Device</ProfileClassID>
+        <ISO15745Reference>
+            <ISO15745Part>4</ISO15745Part>
+            <ISO15745Edition>1</ISO15745Edition>
+            <ProfileTechnology>GSDML</ProfileTechnology>
+        </ISO15745Reference>
+    </ProfileHeader>
+    <ProfileBody>
+        <DeviceIdentity VendorID="0x01C3" DeviceID="0x00D2">
+            <InfoText TextId="TOK_DevIdent_InfoText"/>
+            <VendorName Value="Banner Engineering Corp."/>
+        </DeviceIdentity>
+        <DeviceFunction>
+            <Family MainFamily="I/O" ProductFamily="DXM Series"/>
+        </DeviceFunction>
+        <ApplicationProcess>
+            <DeviceAccessPointList>
+                <DeviceAccessPointItem ID="1-port device" PhysicalSlots="0..9"
+                ModuleIdentNumber="0x00000001" MinDeviceInterval="1024"
+                ImplementationType="GOAL_PROFINET_Device_Stack" DNS_CompatibleName="dxm"
+                FixedInSlots="0" ObjectUUID_LocalIndex="1"
+                RequiredSchemaVersion="V2.2" MaxSupportedRecordSize="4068"
+                ParameterizationSpeedupSupported="false" PowerOnToCommReady="10000"
+                DeviceAccessSupported="true" NumberOfDeviceAccessAR="1"
+                PNIO_Version="V2.34" ResetToFactoryModes="1 2 4"
+                CheckDeviceID_Allowed="true" MultipleWriteSupported="true"
+                LLDP_NoD_Supported="true" NameOfStationNotTransferable="true"
+                AddressAssignment="DCP">
+                    <ModuleInfo>
+                        <Name TextId="TOK_Standard_1p"/>
+                        <InfoText TextId="TOK_ModInfo_InfoTextId_DAP1"/>
+                        <VendorName Value="Banner Engineering Corp."/>
+                        <OrderNumber Value="L18397"/>
+                        <HardwareRelease Value="A1.0"/>
+                        <SoftwareRelease Value="Z1.0"/>
+                    </ModuleInfo>
+                    <CertificationInfo ConformanceClass="A" ApplicationClass="" NetloadClass="I"/>
+                    <SubslotList>
+                        <SubslotItem SubslotNumber="32768" TextId="TOK_Subslot_8000"/>
+                        <SubslotItem SubslotNumber="32769" TextId="TOK_Subslot_8001"/>
+                    </SubslotList>
+                    <IOConfigData MaxInputLength="1440" MaxOutputLength="1440"/>
+                    <UseableModules>
+                        <ModuleItemRef ModuleItemTarget="Input_Integer_512" AllowedInSlots="1..3"/>
+                        <ModuleItemRef ModuleItemTarget="Input_Integer_256" AllowedInSlots="1..3"/>
+                        <ModuleItemRef ModuleItemTarget="Input_Integer_128" AllowedInSlots="1..3"/>
+                        <ModuleItemRef ModuleItemTarget="Input_Integer_64"  AllowedInSlots="1..3"/>
+                        <ModuleItemRef ModuleItemTarget="Input_FloatingPoint_512" AllowedInSlots="4..6"/>
+                        <ModuleItemRef ModuleItemTarget="Input_FloatingPoint_256" AllowedInSlots="4..6"/>
+                        <ModuleItemRef ModuleItemTarget="Input_FloatingPoint_128" AllowedInSlots="4..6"/>
+                        <ModuleItemRef ModuleItemTarget="Input_FloatingPoint_64"  AllowedInSlots="4..6"/>
+                        <ModuleItemRef ModuleItemTarget="Output_Integer_512" AllowedInSlots="7..9"/>
+                        <ModuleItemRef ModuleItemTarget="Output_Integer_256" AllowedInSlots="7..9"/>
+                        <ModuleItemRef ModuleItemTarget="Output_Integer_128" AllowedInSlots="7..9"/>
+                        <ModuleItemRef ModuleItemTarget="Output_Integer_64"  AllowedInSlots="7..9"/>
+                    </UseableModules>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="DAP1" SubmoduleIdentNumber="0x0001" Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="false">
+                            <IOData/>
+                            <ModuleInfo>
+                                <Name TextId="TOK_Standard"/>
+                                <InfoText TextId="TOK_ModInfo_InfoTextId_DAP1"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                    <SystemDefinedSubmoduleList>
+                        <InterfaceSubmoduleItem ID="DAP1_IDS_2I" SubslotNumber="32768" SubmoduleIdentNumber="0x8000" SupportedRT_Classes="RT_CLASS_1" TextId="TOK_DAP_InterfaceModule" IsochroneModeSupported="false" SupportedProtocols="LLDP" NetworkComponentDiagnosisSupported="false" PTP_BoundarySupported="true" DCP_BoundarySupported="true">
+                            <ApplicationRelations NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" StartupMode="Advanced;Legacy">
+                                <TimingProperties SendClock="32" ReductionRatio="1 2 4 8 16 32 64 128 256 512"/>
+                            </ApplicationRelations>
+                        </InterfaceSubmoduleItem>
+                        <PortSubmoduleItem ID="DAP1_IDS_2P1" SubslotNumber="32769" SubmoduleIdentNumber="0x8001" TextId="TOK_Port1" MaxPortRxDelay="378" MaxPortTxDelay="1212" PortDeactivationSupported="false" LinkStateDiagnosisCapability="Up+Down">
+                            <MAUTypeList>
+                                <MAUTypeItem Value="16"/>
+                            </MAUTypeList>
+                        </PortSubmoduleItem>
+                    </SystemDefinedSubmoduleList>
+                    <Graphics>
+                        <GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="ID_Graph_1"/>
+                    </Graphics>
+                </DeviceAccessPointItem>
+            </DeviceAccessPointList>
+            <ModuleList>
+                <ModuleItem ID="Input_Integer_512" ModuleIdentNumber="0x00000030">
+                    <ModuleInfo>
+                        <Name TextId="TOK_TextId_Module_Input_Integer_512"/>
+                        <InfoText TextId="TOK_InfoTextId_Module_Input_Integer_512"/>
+                        <HardwareRelease Value="1.0"/>
+                        <SoftwareRelease Value="1.0"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="1" SubmoduleIdentNumber="0x0001" MayIssueProcessAlarm="false">
+                            <IOData>
+                                <Input Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" TextId="TOK_Input_DataItem_512" Length="512" UseAsBits="true"/>
+                                </Input>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="TOK_TextId_Module_Input_Integer_512"/>
+                                <InfoText TextId="TOK_InfoTextId_Module_Input_Integer_512"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+                <ModuleItem ID="Input_Integer_256" ModuleIdentNumber="0x00000031">
+                    <ModuleInfo>
+                        <Name TextId="TOK_TextId_Module_Input_Integer_256"/>
+                        <InfoText TextId="TOK_InfoTextId_Module_Input_Integer_256"/>
+                        <HardwareRelease Value="1.0"/>
+                        <SoftwareRelease Value="1.0"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="2" SubmoduleIdentNumber="0x0001" MayIssueProcessAlarm="false">
+                            <IOData>
+                                <Input Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" TextId="TOK_Input_DataItem_256" Length="256" UseAsBits="true"/>
+                                </Input>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="TOK_TextId_Module_Input_Integer_256"/>
+                                <InfoText TextId="TOK_InfoTextId_Module_Input_Integer_256"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+                <ModuleItem ID="Input_Integer_128" ModuleIdentNumber="0x00000032">
+                    <ModuleInfo>
+                        <Name TextId="TOK_TextId_Module_Input_Integer_128"/>
+                        <InfoText TextId="TOK_InfoTextId_Module_Input_Integer_128"/>
+                        <HardwareRelease Value="1.0"/>
+                        <SoftwareRelease Value="1.0"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="3" SubmoduleIdentNumber="0x0001" MayIssueProcessAlarm="false">
+                            <IOData>
+                                <Input Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" TextId="TOK_Input_DataItem_128" Length="128" UseAsBits="true"/>
+                                </Input>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="TOK_TextId_Module_Input_Integer_128"/>
+                                <InfoText TextId="TOK_InfoTextId_Module_Input_Integer_128"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+                <ModuleItem ID="Input_Integer_64" ModuleIdentNumber="0x00000033">
+                    <ModuleInfo>
+                        <Name TextId="TOK_TextId_Module_Input_Integer_64"/>
+                        <InfoText TextId="TOK_InfoTextId_Module_Input_Integer_64"/>
+                        <HardwareRelease Value="1.0"/>
+                        <SoftwareRelease Value="1.0"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="4" SubmoduleIdentNumber="0x0001" MayIssueProcessAlarm="false">
+                            <IOData>
+                                <Input Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" TextId="TOK_Input_DataItem_64" Length="64" UseAsBits="true"/>
+                                </Input>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="TOK_TextId_Module_Input_Integer_64"/>
+                                <InfoText TextId="TOK_InfoTextId_Module_Input_Integer_64"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+                <ModuleItem ID="Input_FloatingPoint_512" ModuleIdentNumber="0x00000034">
+                    <ModuleInfo>
+                        <Name TextId="TOK_TextId_Module_Input_FloatingPoint_512"/>
+                        <InfoText TextId="TOK_InfoTextId_Module_Input_FloatingPoint_512"/>
+                        <HardwareRelease Value="1.0"/>
+                        <SoftwareRelease Value="1.0"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="5" SubmoduleIdentNumber="0x0001" MayIssueProcessAlarm="false">
+                            <IOData>
+                                <Input Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" TextId="TOK_Input_DataItem_512" Length="512" UseAsBits="true"/>
+                                </Input>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="TOK_TextId_Module_Input_FloatingPoint_512"/>
+                                <InfoText TextId="TOK_InfoTextId_Module_Input_FloatingPoint_512"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+                <ModuleItem ID="Input_FloatingPoint_256" ModuleIdentNumber="0x00000035">
+                    <ModuleInfo>
+                        <Name TextId="TOK_TextId_Module_Input_FloatingPoint_256"/>
+                        <InfoText TextId="TOK_InfoTextId_Module_Input_FloatingPoint_256"/>
+                        <HardwareRelease Value="1.0"/>
+                        <SoftwareRelease Value="1.0"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="6" SubmoduleIdentNumber="0x0001" MayIssueProcessAlarm="false">
+                            <IOData>
+                                <Input Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" TextId="TOK_Input_DataItem_256" Length="256" UseAsBits="true"/>
+                                </Input>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="TOK_TextId_Module_Input_FloatingPoint_256"/>
+                                <InfoText TextId="TOK_InfoTextId_Module_Input_FloatingPoint_256"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+                <ModuleItem ID="Input_FloatingPoint_128" ModuleIdentNumber="0x00000036">
+                    <ModuleInfo>
+                        <Name TextId="TOK_TextId_Module_Input_FloatingPoint_128"/>
+                        <InfoText TextId="TOK_InfoTextId_Module_Input_FloatingPoint_128"/>
+                        <HardwareRelease Value="1.0"/>
+                        <SoftwareRelease Value="1.0"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="7" SubmoduleIdentNumber="0x0001" MayIssueProcessAlarm="false">
+                            <IOData>
+                                <Input Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" TextId="TOK_Input_DataItem_128" Length="128" UseAsBits="true"/>
+                                </Input>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="TOK_TextId_Module_Input_FloatingPoint_128"/>
+                                <InfoText TextId="TOK_InfoTextId_Module_Input_FloatingPoint_128"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+                <ModuleItem ID="Input_FloatingPoint_64" ModuleIdentNumber="0x00000037">
+                    <ModuleInfo>
+                        <Name TextId="TOK_TextId_Module_Input_FloatingPoint_64"/>
+                        <InfoText TextId="TOK_InfoTextId_Module_Input_FloatingPoint_64"/>
+                        <HardwareRelease Value="1.0"/>
+                        <SoftwareRelease Value="1.0"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="8" SubmoduleIdentNumber="0x0001" MayIssueProcessAlarm="false">
+                            <IOData>
+                                <Input Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" TextId="TOK_Input_DataItem_64" Length="64" UseAsBits="true"/>
+                                </Input>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="TOK_TextId_Module_Input_FloatingPoint_64"/>
+                                <InfoText TextId="TOK_InfoTextId_Module_Input_FloatingPoint_64"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+                <ModuleItem ID="Output_Integer_512" ModuleIdentNumber="0x00000040">
+                    <ModuleInfo>
+                        <Name TextId="TOK_TextId_Module_Output_Integer_512"/>
+                        <InfoText TextId="TOK_InfoTextId_Module_Output_Integer_512"/>
+                        <HardwareRelease Value="1.0"/>
+                        <SoftwareRelease Value="1.0"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="9" SubmoduleIdentNumber="0x0001" MayIssueProcessAlarm="false">
+                            <IOData>
+                                <Output Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" TextId="TOK_Output_DataItem_512" Length="512" UseAsBits="true"/>
+                                </Output>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="TOK_TextId_Module_Output_Integer_512"/>
+                                <InfoText TextId="TOK_InfoTextId_Module_Output_Integer_512"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+                <ModuleItem ID="Output_Integer_256" ModuleIdentNumber="0x00000041">
+                    <ModuleInfo>
+                        <Name TextId="TOK_TextId_Module_Output_Integer_256"/>
+                        <InfoText TextId="TOK_InfoTextId_Module_Output_Integer_256"/>
+                        <HardwareRelease Value="1.0"/>
+                        <SoftwareRelease Value="1.0"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="10" SubmoduleIdentNumber="0x0001" MayIssueProcessAlarm="false">
+                            <IOData>
+                                <Output Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" TextId="TOK_Output_DataItem_256" Length="256" UseAsBits="true"/>
+                                </Output>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="TOK_TextId_Module_Output_Integer_256"/>
+                                <InfoText TextId="TOK_InfoTextId_Module_Output_Integer_256"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+                <ModuleItem ID="Output_Integer_128" ModuleIdentNumber="0x00000042">
+                    <ModuleInfo>
+                        <Name TextId="TOK_TextId_Module_Output_Integer_128"/>
+                        <InfoText TextId="TOK_InfoTextId_Module_Output_Integer_128"/>
+                        <HardwareRelease Value="1.0"/>
+                        <SoftwareRelease Value="1.0"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="11" SubmoduleIdentNumber="0x0001" MayIssueProcessAlarm="false">
+                            <IOData>
+                                <Output Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" TextId="TOK_Output_DataItem_128" Length="128" UseAsBits="true"/>
+                                </Output>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="TOK_TextId_Module_Output_Integer_128"/>
+                                <InfoText TextId="TOK_InfoTextId_Module_Output_Integer_128"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+                <ModuleItem ID="Output_Integer_64" ModuleIdentNumber="0x00000043">
+                    <ModuleInfo>
+                        <Name TextId="TOK_TextId_Module_Output_Integer_64"/>
+                        <InfoText TextId="TOK_InfoTextId_Module_Output_Integer_64"/>
+                        <HardwareRelease Value="1.0"/>
+                        <SoftwareRelease Value="1.0"/>
+                    </ModuleInfo>
+                    <VirtualSubmoduleList>
+                        <VirtualSubmoduleItem ID="12" SubmoduleIdentNumber="0x0001" MayIssueProcessAlarm="false">
+                            <IOData>
+                                <Output Consistency="All items consistency">
+                                    <DataItem DataType="OctetString" TextId="TOK_Output_DataItem_64" Length="64" UseAsBits="true"/>
+                                </Output>
+                            </IOData>
+                            <ModuleInfo>
+                                <Name TextId="TOK_TextId_Module_Output_Integer_64"/>
+                                <InfoText TextId="TOK_InfoTextId_Module_Output_Integer_64"/>
+                            </ModuleInfo>
+                        </VirtualSubmoduleItem>
+                    </VirtualSubmoduleList>
+                </ModuleItem>
+            </ModuleList>
+            <GraphicsList>
+                <GraphicItem ID="ID_Graph_1" GraphicFile="GSDML-0x01C3-002D-Banner-DXM"/>
+            </GraphicsList>
+            <CategoryList>
+                <CategoryItem ID="ID_DXM_IODEV" TextId="TOK_Category_Desc"/>
+            </CategoryList>
+            <ExternalTextList>
+                <PrimaryLanguage>
+                    <!--english-->
+                    <Text TextId="TOK_DevIdent_InfoText" Value="Banner DXM Series"/>
+
+                    <!--DAP - port IO device example-->
+                    <Text TextId="TOK_Category_Desc" Value="DXM Wireless Controller"/>
+                    <Text TextId="TOK_Standard" Value="Standard"/>
+                    <Text TextId="TOK_Standard_1p" Value="1-port Device"/>
+
+                    <Text TextId="TOK_ModInfo_InfoTextId_DAP1" Value="1-port Device"/>
+                    <!--port name-->
+                    <Text TextId="TOK_Subslot_8000" Value="X1"/>
+                    <Text TextId="TOK_Subslot_8001" Value="P1"/>
+                    <Text TextId="TOK_DAP_InterfaceModule" Value="Interface"/>
+                    <Text TextId="TOK_Port1" Value="RJ45 10/100 MBit/s"/>
+                    <!--module name-->
+                    <Text TextId="TOK_TextId_Module_Input_Integer_512" Value="512 bytes Integer Input"/>
+                    <Text TextId="TOK_TextId_Module_Input_Integer_256" Value="256 bytes Integer Input"/>
+                    <Text TextId="TOK_TextId_Module_Input_Integer_128" Value="128 bytes Integer Input"/>
+                    <Text TextId="TOK_TextId_Module_Input_Integer_64"  Value="64 bytes Integer Input"/>
+                    <Text TextId="TOK_TextId_Module_Input_FloatingPoint_512" Value="512 bytes Floating Point Input"/>
+                    <Text TextId="TOK_TextId_Module_Input_FloatingPoint_256" Value="256 bytes Floating Point Input"/>
+                    <Text TextId="TOK_TextId_Module_Input_FloatingPoint_128" Value="128 bytes Floating Point Input"/>
+                    <Text TextId="TOK_TextId_Module_Input_FloatingPoint_64"  Value="64 bytes Floating Point Input"/>
+                    <Text TextId="TOK_TextId_Module_Output_Integer_512" Value="512 bytes Integer Output"/>
+                    <Text TextId="TOK_TextId_Module_Output_Integer_256" Value="256 bytes Integer Output"/>
+                    <Text TextId="TOK_TextId_Module_Output_Integer_128" Value="128 bytes Integer Output"/>
+                    <Text TextId="TOK_TextId_Module_Output_Integer_64"  Value="64 bytes Integer Output"/>
+                    <!--module info name-->
+                    <Text TextId="TOK_InfoTextId_Module_Input_Integer_512" Value="Access 256 registers of input integers"/>
+                    <Text TextId="TOK_InfoTextId_Module_Input_Integer_256" Value="Access 128 registers of input integers"/>
+                    <Text TextId="TOK_InfoTextId_Module_Input_Integer_128" Value="Access 64 registers of input integers"/>
+                    <Text TextId="TOK_InfoTextId_Module_Input_Integer_64"  Value="Access 32 registers of input integers"/>
+                    <Text TextId="TOK_InfoTextId_Module_Input_FloatingPoint_512" Value="Access 256 registers of input floating point numbers"/>
+                    <Text TextId="TOK_InfoTextId_Module_Input_FloatingPoint_256" Value="Access 128 registers of input floating point numbers"/>
+                    <Text TextId="TOK_InfoTextId_Module_Input_FloatingPoint_128" Value="Access 64 registers of input floating point numbers"/>
+                    <Text TextId="TOK_InfoTextId_Module_Input_FloatingPoint_64"  Value="Access 32 registers of input floating point numbers"/>
+                    <Text TextId="TOK_InfoTextId_Module_Output_Integer_512" Value="Access 256 registers of output integers"/>
+                    <Text TextId="TOK_InfoTextId_Module_Output_Integer_256" Value="Access 128 registers of output integers"/>
+                    <Text TextId="TOK_InfoTextId_Module_Output_Integer_128" Value="Access 64 registers of output integers"/>
+                    <Text TextId="TOK_InfoTextId_Module_Output_Integer_64" Value="Access 32 registers of output integers"/>
+                    <!--dataitem name-->
+                    <Text TextId="TOK_Input_DataItem_512" Value="Input 512 bytes"/>
+                    <Text TextId="TOK_Input_DataItem_256" Value="Input 256 bytes"/>
+                    <Text TextId="TOK_Input_DataItem_128" Value="Input 128 bytes"/>
+                    <Text TextId="TOK_Input_DataItem_64"  Value="Input 64 bytes"/>
+                    <Text TextId="TOK_Output_DataItem_512" Value="Output 512 bytes"/>
+                    <Text TextId="TOK_Output_DataItem_256" Value="Output 256 bytes"/>
+                    <Text TextId="TOK_Output_DataItem_128" Value="Output 128 bytes"/>
+                    <Text TextId="TOK_Output_DataItem_64"  Value="Output 64 bytes"/>
+                </PrimaryLanguage>
+            </ExternalTextList>
+        </ApplicationProcess>
+    </ProfileBody>
+</ISO15745Profile>
